@@ -32,26 +32,26 @@ public class ListAdsDao implements Ads {
         ads.add(new Ad(
             1,
             1,
-            "playstation for sale",
-            "This is a slightly used playstation"
+            "Batman Funko Pop 283",
+            "Dark Knights Metals Red Death."
         ));
         ads.add(new Ad(
             2,
             1,
-            "Super Nintendo",
-            "Get your game on with this old-school classic!"
+            "Evangelion Funko Pop 747",
+            "Neon Genesis EVA UNIT 01."
         ));
         ads.add(new Ad(
             3,
             2,
-            "Junior Java Developer Position",
-            "Minimum 7 years of experience required. You will be working in the scripting language for Java, JavaScript"
+            "FLCL Funko Pop 458",
+            "FLCL Canti Anime Robot."
         ));
         ads.add(new Ad(
             4,
             2,
-            "JavaScript Developer needed",
-            "Must have strong Java skills"
+            "Halo Funko Pop 08",
+            " Custom Halo SGT. Johnson with an ODST body."
         ));
         return ads;
     }
