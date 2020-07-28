@@ -11,6 +11,7 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
+
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
@@ -35,6 +36,39 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+
+    @Override
+    public List<Ad> adsByUser(long userId) {
+        PreparedStatement stmt = null;
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE user_id = ?";
+            stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving your ads.", e);
+        }
+    }
+//ALTERNATE METHOD TO DISPLAY USER_ADS
+//    @Override
+//    public List<Ad> adsByUser(long userId) {
+//        List<Ad> userAds = new ArrayList<>();
+//        PreparedStatement stmt = null;
+//        try {
+//            String insertQuery = "SELECT * FROM ads WHERE user_id = ?";
+//            stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+//            stmt.setLong(1, userId);
+//            ResultSet rs = stmt.executeQuery();
+//            while(rs.next()){
+//                userAds.add(new Ad(rs.getLong("id"), rs.getLong("user_id"), rs.getString("title"), rs.getString("description")));
+//            }
+////            return createAdsFromResults(rs);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving your ads.", e);
+//        }
+//        return userAds;
+//    }
 
     @Override
     public Long insert(Ad ad) {

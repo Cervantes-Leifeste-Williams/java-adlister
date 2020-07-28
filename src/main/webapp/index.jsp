@@ -11,6 +11,15 @@
     <div class="container">
         <h1>Welcome to the Funko Pop Adlister!</h1>
         <h3>Here are your Ads.</h3>
+
+    </div>
+    <div class="container">
+        <c:forEach var="ad" items="${ads}">
+            <div class="col-md-6">
+                <h2>${ad.title}</h2>
+                <p>${ad.description}</p>
+            </div>
+        </c:forEach>
     </div>
 </body>
 </html>

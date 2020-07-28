@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.controllers.Config;
 import com.codeup.adlister.models.Ad;
 
 import java.util.ArrayList;
@@ -7,6 +8,9 @@ import java.util.List;
 
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
+
+    public ListAdsDao(Config config) {
+    }
 
     public List<Ad> all() {
         if (ads == null) {
@@ -27,25 +31,30 @@ public class ListAdsDao implements Ads {
         return ad.getId();
     }
 
+    @Override
+    public List<Ad> adsByUser(long userId) {
+        return null;
+    }
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
             1,
             1,
             "Batman Funko Pop 283",
-            "Dark Knights Metals Red Death."
+            "Dark Knights Metals Red Death"
         ));
         ads.add(new Ad(
             2,
             1,
             "Evangelion Funko Pop 747",
-            "Neon Genesis EVA UNIT 01."
+            "Neon Genesis EVA UNIT 01!"
         ));
         ads.add(new Ad(
             3,
             2,
             "FLCL Funko Pop 458",
-            "FLCL Canti Anime Robot."
+            "FLCL Canti Anime Robot"
         ));
         ads.add(new Ad(
             4,
