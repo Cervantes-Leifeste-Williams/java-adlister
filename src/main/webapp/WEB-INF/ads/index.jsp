@@ -10,7 +10,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1>Funko Pop Ads!</h1>
+    <h1>All Funko Pop Ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
