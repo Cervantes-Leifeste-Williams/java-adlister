@@ -17,5 +17,7 @@ VALUES  (1, 3, 'ad1', 'description1'),
         (3, 2, 'ad3', 'description3');
 
 # Table not yet added to migration file:
-# INSERT INTO tags (id, name) VALUES ();
+# INSERT INTO tags (id, name)
+# VALUES (1, 'CAPS FOR ONE TYPE OF TAG'),
+#       (2, 'smalls for minor category tags');
 
