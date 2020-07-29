@@ -22,9 +22,25 @@ DROP TABLE IF EXISTS users;
 #                      user_id INT UNSIGNED NOT NULL,
 #                      title VARCHAR(240) NOT NULL,
 #                      description TEXT NOT NULL,
+#                      tag
 #                      PRIMARY KEY (id),
 #                      FOREIGN KEY (user_id) REFERENCES users(id)
 #                          ON DELETE CASCADE
+# );
+
+# CREATE TABLE tags(
+#                      id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+#                      name VARCHAR(200),
+#                      ad_id INT UNSIGNED NOT NULL,
+#                      FOREIGN KEY (ad_id) REFERENCES ads (id)
+# );
+#
+# CREATE TABLE ad_tab (
+#                         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+#                         ad_id INT UNSIGNED NOT NULL ,
+#                         tag_id INT UNSIGNED NOT NULL ,
+#                         FOREIGN KEY (ad_id) REFERENCES ads (id),
+#                         FOREIGN KEY (tag_id) REFERENCES tags (id)
 # );
 
 INSERT INTO users (id, username, email, password)
