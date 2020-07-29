@@ -15,9 +15,10 @@
     <h1>${ad.title} Details!</h1>
     <div>
         <p>${ad.description} </p>
-    <form action="/ads/updateAd" method="get" >
+    <form action="../partials/updateAd" method="get" >
         <input type="hidden" name ="adToUpdate" value="${ad.id}">
         <input type="submit" value="Edit this ad" class="btn btn-info stretched-link">
+
     </form>
     <br>
     <form action="/ads/deleteAd"  method="post">
