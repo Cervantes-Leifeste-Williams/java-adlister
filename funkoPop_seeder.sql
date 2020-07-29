@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS users;
 # DELETE FROM ads WHERE TRUE;
 # and so on
 
+
 CREATE TABLE users (
                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
                        username VARCHAR(240) NOT NULL,
@@ -26,6 +27,40 @@ CREATE TABLE ads (
                      FOREIGN KEY (user_id) REFERENCES users(id)
                          ON DELETE CASCADE
 );
+# CREATE TABLE users (
+#                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#                        username VARCHAR(240) NOT NULL,
+#                        email VARCHAR(240) NOT NULL,
+#                        password VARCHAR(255) NOT NULL,
+#                        PRIMARY KEY (id)
+# );
+#
+# CREATE TABLE ads (
+#                      id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#                      user_id INT UNSIGNED NOT NULL,
+#                      title VARCHAR(240) NOT NULL,
+#                      description TEXT NOT NULL,
+#                      tag
+#                      PRIMARY KEY (id),
+#                      FOREIGN KEY (user_id) REFERENCES users(id)
+#                          ON DELETE CASCADE
+# );
+
+
+# CREATE TABLE tags(
+#                      id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+#                      name VARCHAR(200),
+#                      ad_id INT UNSIGNED NOT NULL,
+#                      FOREIGN KEY (ad_id) REFERENCES ads (id)
+# );
+#
+# CREATE TABLE ad_tab (
+#                         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+#                         ad_id INT UNSIGNED NOT NULL ,
+#                         tag_id INT UNSIGNED NOT NULL ,
+#                         FOREIGN KEY (ad_id) REFERENCES ads (id),
+#                         FOREIGN KEY (tag_id) REFERENCES tags (id)
+# );
 
 INSERT INTO users (id, username, email, password)
 VALUES  (1, 'user1', 'user1@email.com', 'password');

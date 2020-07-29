@@ -15,7 +15,9 @@ import java.util.List;
 @WebServlet(name = "controllers.UserAdsServlet", urlPatterns = "/ads/usersAds")
 public class UserAdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+    User user = (User)request.getSession().getAttribute("user");
+        request.setAttribute("ads", DaoFactory.getAdsDao().adsByUser(user.getId()));
         request.getRequestDispatcher("/WEB-INF/ads/usersAds.jsp").forward(request, response);
     }
 }
+

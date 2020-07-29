@@ -12,6 +12,8 @@
         <h1>Welcome to the Funko Pop Adlister!</h1>
 <%--        <h3>Here are your Ads.</h3>--%>
 
+        <a class="btn btn-primary stretched-link" href="/ads">Please Click here to see all the ads.</a>
+
     </div>
 <%--    <div class="container">--%>
 <%--        <c:forEach var="ad" items="${ads}">--%>
