@@ -11,4 +11,11 @@ public interface Ads {
     Long insert(Ad ad);
 
     List<Ad> adsByUser(long userId);
+
+    Ad editAdTitle(long id, String title);
+    Ad editAdDescription(long id, String description);
+    Ad deleteAd(long id);
+    List<Ad> search(String query);
+
+    Ad findById(long id);
 }
