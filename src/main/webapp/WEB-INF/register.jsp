@@ -11,6 +11,11 @@
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
             <div class="form-group">
+                <c:if test="${userError}">
+                    <div class="alert alert-danger" role="alert">
+                        Username is a required field
+                    </div>
+                </c:if>
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
