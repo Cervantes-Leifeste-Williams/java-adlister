@@ -20,6 +20,11 @@ public class UpdateServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //psuedo
+        //grab ad by id from db = obj
+        //param req for id
+        //take input field to input dao method
+
 
     }
 
