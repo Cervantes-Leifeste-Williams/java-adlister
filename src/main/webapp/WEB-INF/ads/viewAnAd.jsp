@@ -9,15 +9,16 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <h3>Edit Your Ad.</h3>
+<%--    <h3>Edit Your Ad.</h3>--%>
 </div>
 <div class="container">
     <h1>${ad.title} Details!</h1>
     <div>
         <p>${ad.description} </p>
-    <form action="/ads/updateAd" method="get" >
+    <form action="../ads/updateAd.jsp" method="get" >
         <input type="hidden" name ="adToUpdate" value="${ad.id}">
         <input type="submit" value="Edit this ad" class="btn btn-info stretched-link">
+
     </form>
     <br>
     <form action="/ads/deleteAd"  method="post">

@@ -17,6 +17,7 @@
         <p>${ad.description} </p>
         <form action="/ads/updateAd" method="get" >
             <input type="hidden" name ="adToUpdate" value="${ad.id}">
+            <a href="/updateAd?adToUpdate=${ad.id}" class="btn btn-info stretched-link">View Details</a>
             <input type="submit" value="Edit this ad" class="btn btn-info stretched-link">
         </form>
         <br>
