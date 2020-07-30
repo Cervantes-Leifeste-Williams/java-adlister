@@ -150,10 +150,11 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad deleteAd(long id){
         findById(id);
-        String deleteAdQuery = "DELETE FROM ads WHERE id = ?";
         try{
-            PreparedStatement statement = connection.prepareStatement(deleteAdQuery);
+        String deleteAdQuery = "DELETE FROM ads WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(deleteAdQuery, Statement.RETURN_GENERATED_KEYS);
             statement.setLong(1, id);
+            statement.executeUpdate();
             boolean confirmDeletion = statement.execute();
             return null;
         }catch(SQLException e){
@@ -175,5 +176,17 @@ public class MySQLAdsDao implements Ads {
                 }
                 }
 
+//    public delete(Long id) {
+//        List<Ad> ads = new ArrayList<>();
+//        try {
+//            String insertQuery = "DELETE FROM ads WHERE id = ?";
+//            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+//            stmt.setLong(1, id);
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error deleting product #" + id, e);
+//        }
+//        return null;
+    //}
 
 }

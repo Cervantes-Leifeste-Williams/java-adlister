@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <h3>Edit Your Ad.</h3>
+<%--    <h3>Edit Your Ad.</h3>--%>
 </div>
 <div class="container">
     <h1>${ad.title} Details!</h1>
