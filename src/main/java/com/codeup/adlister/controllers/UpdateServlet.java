@@ -11,10 +11,6 @@ import java.io.IOException;
 
 @WebServlet(name = "UpdateServlet")
 public class UpdateServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User)request.getSession().getAttribute("user");
         if (request.getSession().getAttribute("user") == null) {
@@ -22,4 +18,9 @@ public class UpdateServlet extends HttpServlet {
             return;
         }
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
 }
